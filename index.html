@@ -220,7 +220,7 @@
 
   .tab[aria-selected="true"] {
     background: var(--navy);
-    color: var(--gold-light);
+    color: #fff;
     box-shadow: 0 4px 12px rgba(27, 42, 65, 0.3);
   }
 
@@ -229,12 +229,12 @@
   }
 
   .panel h2 {
-    margin: 0 0 14px;
+    margin: 0 0 8px;
     font-family: var(--deco-font);
     font-weight: normal;
-    font-size: 20px;
+    font-size: 30px;
+    line-height: 1.1;
     color: var(--navy);
-    text-shadow: 1px 1px 0 var(--gold-light);
   }
 
   .timeline {
@@ -329,7 +329,7 @@
   /* one-line intro under each tab heading */
   .panel-sub {
     max-width: 440px;
-    margin: -4px auto 18px;
+    margin: 0 auto 18px;
     font-size: 14px;
     line-height: 1.5;
     color: var(--navy-soft);
@@ -351,11 +351,56 @@
   }
 
   .credits {
-    max-width: 440px;
-    margin: 18px auto 0;
-    font-size: 12px;
-    line-height: 1.6;
+    max-width: 460px;
+    margin: 22px auto 0;
+    padding: 20px 24px 18px;
+    background: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(27, 42, 65, 0.14);
+    text-align: center;
+  }
+
+  .credits-lead {
+    font-size: 13px;
+    line-height: 1.55;
     color: var(--navy-soft);
+  }
+
+  .credit-names {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 6px 26px;
+    margin: 12px 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .credits-close {
+    padding-top: 12px;
+    border-top: 1px solid rgba(201, 162, 39, 0.5);
+    font-family: var(--deco-font);
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--navy);
+  }
+
+  .credits-close i {
+    font-style: normal;
+    font-size: 9px;
+    color: var(--gold);
+    margin: 0 6px;
+    vertical-align: 3px;
+  }
+
+  @media (max-width: 480px) {
+    .credit-names {
+      grid-template-columns: repeat(2, auto);
+    }
   }
 
   /* time + activity rows */
@@ -441,26 +486,40 @@
     margin-bottom: 8px;
   }
 
+  .cheese-box p.panel-note.panel-note-gap {
+    margin-top: 24px;
+  }
+
+  .event .info-list {
+    margin: 8px 0 0;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .event .info-list li:last-child {
+    margin-bottom: 0;
+  }
+
   .info-list li::marker {
     color: var(--gold);
   }
 
   .cta {
     display: inline-block;
-    background: var(--gold);
-    color: var(--navy);
+    background: var(--navy);
+    color: #fff;
     font-weight: bold;
     font-size: 14px;
     text-decoration: none;
     border-radius: 999px;
     padding: 9px 20px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 14px rgba(27, 42, 65, 0.3);
     transition: transform 0.15s ease, background 0.15s ease;
   }
 
   .cta:hover {
     transform: translateY(-2px);
-    background: var(--gold-light);
+    background: var(--navy-soft);
   }
 
   .rickroll-line {
@@ -684,26 +743,50 @@ The Itinerary
       <div class="panel-sub">The important stuff: what to wear, what to pack and how not to get left outside the casino.</div>
 
       <p class="panel-note">Dress code</p>
-      <ul class="info-list">
-        <li><b>Wednesday night:</b> Casual + comfy. Dress for the extreme sport of competitive bowling while remaining ready to be mugging for Insta at the drop of a hat.
-          Casual. Cute. Bowlable.</li>
-        <li><b>Thursday daytime:</b> Business casual. Look cute. Look somewhat put together. Look like you could reasonably attend a meeting.
-          There are always pictures, so do with that information what you will. But don’t overthink it.</li>
-        <li><b>Thursday evening:</b> Less costume party, more gala with a Great Gatsby twist.
-          Get your dresses out, divas. Suits, sparkle, glam, drama. This is your moment.
-          <span class="li-sub">We’re going full 1920s decadence. Prohibition, but make it Bushbalm, bb. ✨</span></li>
-      </ul>
+      <div class="timeline">
 
-      <div class="stars-divider">◆ ◇ ◆ ◇ ◆</div>
+        <div class="event">
+          <span class="event-when">Wed Dec 9 &middot; Evening</span>
+          <div class="event-title">Casual + Comfy</div>
+          <div class="event-desc">
+            Dress for the extreme sport of competitive bowling while remaining ready to be mugging for Insta at the drop of a hat.
+            Casual. Cute. Bowlable.
+          </div>
+        </div>
 
-      <p class="panel-note">What to pack</p>
-      <ul class="info-list">
+        <div class="event">
+          <span class="event-when">Thu Dec 10 &middot; Daytime</span>
+          <div class="event-title">Business Casual</div>
+          <div class="event-desc">
+            Look cute. Look somewhat put together. Look like you could reasonably attend a meeting.
+            There are always pictures, so do with that information what you will. But don’t overthink it.
+          </div>
+        </div>
+
+        <div class="event event-big">
+          <span class="event-when">Thu Dec 10 &middot; Evening</span>
+          <div class="event-title">Gatsby Gala</div>
+          <div class="event-desc">
+            Less costume party, more gala with a Great Gatsby twist. Get your dresses out, divas. Suits, sparkle, glam, drama. This is your moment.
+            <br><br>
+            We’re going full 1920s decadence. Prohibition, but make it Bushbalm, bb. ✨
+          </div>
+        </div>
+
+      </div>
+
+      <p class="panel-note panel-note-gap">What to pack</p>
+      <div class="timeline">
+        <div class="event">
+          <ul class="info-list">
         <li><strong>Your ID.</strong> The Hard Rock is 19+, so no ID = no entry = deeply tragic.</li>
         <li><strong>Your Big Bush Bash outfit.</strong> Obviously.</li>
         <li><strong>Warm layers.</strong> It’s Ottawa. In December. Snow? Sleet? A meteorological betrayal? Who knows. Bring the coat, hat and mitts.</li>
         <li><strong>Everything you need from morning → night on Thursday</strong> all in one bag or suitcase. We’re going straight from the daytime festivities to the Hard Rock, so your essentials need to come with you. Revisit The Bag Situation on the Schedule tab if needed.</li>
-        <li>For no reason,<strong>a little extra spare space</strong> in your suitcase. Don’t worry about it. 🤭</li>
-      </ul>
+        <li>For no reason, <strong>a little extra spare space</strong> in your suitcase. Don’t worry about it. 🤭</li>
+        </ul>
+        </div>
+      </div>
 
       <div class="stars-divider">◆ ◇ ◆ ◇ ◆</div>
     </div>
@@ -712,13 +795,17 @@ The Itinerary
   <div class="mascot-slot">
     <img id="mascot-img" src="WinterBushy.png" alt="Bushbalm mascot" onerror="this.style.display='none'; document.getElementById('mascot-fallback').style.display='block';">
     <div id="mascot-fallback" style="display:none; font-size: 60px;">🧴✨</div>
- <div class="mascot-caption"> <!--Bushy is judging your flight booking procrastination... <br>-->
-    
     <div class="credits">
-      Big shoutout to your beloved Party Planning Committee for managing the chaos &amp; making all of this possible:
-      <b>Kayla Tuor, Samantha Carter, Momo Udaipurwala, Erica Emery, Winnie rai, &amp; Rukshani Adikari.</b>
-      <br><br>
-      They planned. They coordinated. They slayed. Now we party. 🥂
+      <div class="credits-lead">Big shoutout to your beloved Party Planning Committee for managing the chaos &amp; making all of this possible:</div>
+      <div class="credit-names">
+        <span>Kayla Tuor</span>
+        <span>Samantha Carter</span>
+        <span>Momo Udaipurwala</span>
+        <span>Erica Emery</span>
+        <span>Winnie rai</span>
+        <span>Rukshani Adikari</span>
+      </div>
+      <div class="credits-close">They planned <i>◆</i> They coordinated <i>◆</i> They slayed <i>◆</i> Now we party 🥂</div>
     </div>
   </div>
 
