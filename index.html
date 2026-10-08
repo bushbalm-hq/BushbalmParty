@@ -499,10 +499,24 @@
     margin-top: 24px;
   }
 
+  .fine-print {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(27, 42, 65, 0.14);
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--navy-soft);
+  }
+
   .event .info-list {
     margin: 8px 0 0;
     font-size: 13px;
     line-height: 1.55;
+  }
+
+  .event-desc .info-list {
+    margin-bottom: 12px;
   }
 
   .event .info-list li:last-child {
@@ -617,8 +631,18 @@
       margin-bottom: 8px;
     }
 
+    .tabs {
+      flex-wrap: nowrap;
+      gap: 2px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
     .tab {
-      padding: 8px 12px;
+      flex: 1 1 auto;
+      padding: 8px 4px;
+      font-size: 12px;
+      white-space: nowrap;
     }
 
     .event {
@@ -641,6 +665,14 @@
 
     .mascot-slot {
       margin-top: 18px;
+    }
+  }
+
+  /* very small phones: keep all four tabs on one row */
+  @media (max-width: 380px) {
+    .tab {
+      font-size: 11px;
+      padding: 8px 3px;
     }
   }
 </style>
@@ -666,6 +698,7 @@
     <div class="tabs" role="tablist" aria-label="Holiday party info">
       <button class="tab" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="true">Schedule</button>
       <button class="tab" role="tab" id="tab-travel" aria-controls="panel-travel" aria-selected="false" tabindex="-1">Travel &amp; Stay</button>
+      <button class="tab" role="tab" id="tab-wear" aria-controls="panel-wear" aria-selected="false" tabindex="-1">Wear &amp; Pack</button>
       <button class="tab" role="tab" id="tab-pack" aria-controls="panel-pack" aria-selected="false" tabindex="-1">Good to Know</button>
     </div>
 
@@ -694,7 +727,7 @@
           <div class="callout">
             <div class="callout-title">The Bag Situation</div>
             <ul class="callout-list">
-              <li>Thursday is one big day-to-night adventure, so whatever you need for the day <em>and</em> the Bash is coming with you.</li>
+              <li>Thursday is one big day-to-night adventure, so whatever you need for the day <em>and</em> the Big Bash is coming with you.</li>
               <li><b>Out-of-towners:</b> Check out of the Hyatt Thursday morning and bring all your bags with you.</li>
               <li><b>Locals:</b> This applies to you too, divas. Bring what you need for the whole day/night.</li>
               <li>We’ll store everyone’s bags during the daytime festivities, then we’re heading straight from the AGM to the next stop. No going home. No hotel pit stop. We are in motion.</li>
@@ -702,11 +735,11 @@
           </div><br>
 The Itinerary
           <ul class="itinerary">
-            <li><b>8:15 &ndash; 9:00 a.m.</b> <span>Arrivals. Fruit, muffins &amp; drinks provided.</span></li>
+            <li><b>8:15 &ndash; 9:00 a.m.</b> <span>Arrive at Cineplex. Fruit, muffins &amp; drinks provided.</span></li>
             <li><b>9:00 a.m. &ndash; 12:00 p.m.</b> <span>AGM: Year in Review (yawn, but important)</span></li>
             <li><b>12:00 &ndash; 1:00 p.m.</b> <span>Lunch</span></li>
             <li><b>1:00 &ndash; 3:00 p.m.</b> <span>Holiday festivities, including the gift exchange</span></li>
-            <li><b>3:00 p.m.</b> <span>And we’re off! Everyone heads to the Hard Rock.</span></li>
+            <li><b>3:00 p.m.</b> <span>& we’re off! Everyone heads to the Hard Rock.</span></li>
           </ul>
 
           <div class="event-tags">
@@ -722,9 +755,12 @@ The Itinerary
             from our daytime festivities, check in, and give everyone time to get glam before the Bash begins.
             <br><br>
             Think less costume party, more Gatsby gala. Dress up. Sparkle. Cause a tasteful scene.
+            <br><br>
+            <strong>Bring your +1!</strong> They&rsquo;re welcome at the Bash. Details are under Good to Know.
           </div>
           <div class="event-tags">
             <span class="tag">📍 Venue: Hard Rock Hotel &amp; Casino Ottawa</span>
+            <span class="tag">🚪 Room: The Joint</span>
             <span class="tag">⏰ Time: 6pm &ndash; 1am</span>
             <span class="tag">🥂 Theme: The Great Gatsby</span>
             <span class="tag">🛏️ Hotel rooms provided for everyone</span>
@@ -793,9 +829,9 @@ The Itinerary
       <div class="stars-divider">◆ ◇ ◆ ◇ ◆</div>
     </div>
 
-    <div class="panel" role="tabpanel" id="panel-pack" aria-labelledby="tab-pack" hidden>
-      <h2>Good to Know</h2>
-      <div class="panel-sub">The important stuff: what to wear, what to pack and how not to get left outside the casino.</div>
+    <div class="panel" role="tabpanel" id="panel-wear" aria-labelledby="tab-wear" hidden>
+      <h2>Wear &amp; Pack</h2>
+      <div class="panel-sub">What to wear, what to pack and how to survive an Ottawa December.</div>
 
       <p class="panel-note">Dress code</p>
       <div class="timeline">
@@ -834,13 +870,99 @@ The Itinerary
       <div class="timeline">
         <div class="event">
           <ul class="info-list">
-        <li><strong>Your ID.</strong> The Hard Rock is 19+, so no ID = no entry = deeply tragic.</li>
+        <li><strong>Your ID.</strong> The Hard Rock hotel and casino are 19+, so no ID = no entry = deeply tragic.</li>
         <li><strong>Your Big Bush Bash outfit.</strong> Obviously.</li>
         <li><strong>Warm layers.</strong> It’s Ottawa. In December. Snow? Sleet? A meteorological betrayal? Who knows. Bring the coat, hat and mitts.</li>
         <li><strong>Everything you need from morning → night on Thursday</strong> all in one bag or suitcase. We’re going straight from the daytime festivities to the Hard Rock, so your essentials need to come with you. Revisit The Bag Situation on the Schedule tab if needed.</li>
-        <li>For no reason, <strong>a little extra spare space</strong> in your suitcase. Don’t worry about it. 🤭</li>
+        <li>For no particular reason, <strong>leave a little extra space</strong> in your suitcase. Don’t worry about it. 🤭</li>
         </ul>
         </div>
+      </div>
+
+      <div class="stars-divider">◆ ◇ ◆ ◇ ◆</div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-pack" aria-labelledby="tab-pack" hidden>
+      <h2>Good to Know</h2>
+      <div class="panel-sub">The important stuff: who you can bring, where to go and how not to get left outside the casino.</div>
+
+      <p class="panel-note">Bringing a +1?</p>
+      <div class="timeline">
+
+        <div class="event">
+          <div class="event-title">Who counts as a +1?</div>
+          <div class="event-desc">
+            A partner, a friend, a family member. Basically anyone you’d actually want to bring along for the fun.
+            <br><br>
+            <strong>Not invited:</strong> pets or kiddos. Sorry besties. :/
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event-title">What are they invited to?</div>
+          <div class="event-desc">
+            Your +1 is invited to The Big Bush Bash: <strong>Gatsby Gala only</strong>. All other Bushbalm holiday activities are employees-only.
+            <br><br>
+            Their spot at the Gatsby Gala is covered, but <strong>travel and any other costs outside of the Gala are on you</strong>.
+            <br><br>
+            And most importantly: make sure you’ve <strong>RSVP’d for your +1</strong> so we know they’re coming. No surprise guests, divas. ♡
+          </div>
+        </div>
+
+      </div>
+
+      <p class="panel-note panel-note-gap">Hard Rock Hotel and Casino info</p>
+      <div class="timeline">
+
+        <div class="event">
+          <div class="event-title">Finding The Joint</div>
+          <div class="event-desc">
+            The Gala takes place in an event space called <strong>The Joint</strong>.
+            <br><br>
+            The Hard Rock is basically a maze. If you get lost, let any staff member know you’re part of the event in <strong>“The Joint”</strong>.
+            <br><br>
+            Not all casino and hotel staff know that Bushbalm is the event, so use the room name instead of ours.
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event-title">Which entrance do I use?</div>
+          <div class="event-desc">
+            Staying at the hotel? Use the <strong>hotel and casino entrance</strong>. You can’t miss it, there’s a huge red guitar statue right outside. Once you’re through security, turn right to find the hotel check-in desk.
+            <br><br>
+            The hotel and casino are 19+ only, but the Gala venue isn’t. If you or your +1 are under 19, arrive through
+            <strong>The Rotunda Entrance</strong> and go straight up the grand staircase to the festivities.
+            <br><br>
+            Not staying at the hotel, or not getting ready there? Get dropped off at The Rotunda Entrance for an easy arrival.
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event-title">Your stay perks</div>
+          <div class="event-desc">
+            During your stay, you have access to all amenities. A few perks are:
+            <ul class="info-list">
+              
+              <li><strong>The gym.</strong> (Included)</li>
+              <li><strong>The Sound of Your Stay.</strong> (Included) Request a Fender guitar (with headphones and an amp) or a Crosley record player with a curated selection of records, delivered straight to your room.</li>
+             <li><strong>Casino access.</strong> Come and go as you wish.</li>
+              <li><strong>The common areas,</strong> double as a museum of iconic outfits, instruments and artifacts from music legends.</li>
+            </ul>
+            There are also lounges, a live band, restaurants and more. Anything purchased or spent outside of the Gala is on you,
+            paid for with your own money or your per diem.
+            <div class="fine-print">
+              Bushbalm does not encourage gambling and is not responsible for any gambling during your stay. Please enjoy responsibly.
+            </div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event-desc">
+            Planning to bring outside food or drinks (especially alcohol) up to your room? We’ve been asked to <strong>be discreet</strong> about it.
+            That means no huge coolers and no cases of beer, please.
+          </div>
+        </div>
+
       </div>
 
       <div class="stars-divider">◆ ◇ ◆ ◇ ◆</div>
