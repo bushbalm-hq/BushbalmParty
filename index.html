@@ -315,6 +315,30 @@
     color: var(--navy);
   }
 
+  /* site-wide notice above the tabs */
+  .notice {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 12px;
+    max-width: 440px;
+    margin: 0 auto 18px;
+    padding: 8px 14px;
+    background: var(--gold-tint);
+    border: 1px solid rgba(201, 162, 39, 0.45);
+    border-radius: 14px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--navy);
+  }
+
+  .notice .cta {
+    padding: 6px 14px;
+    font-size: 12px;
+    box-shadow: none;
+  }
+
   .callout-title {
     font-size: 11px;
     font-weight: 700;
@@ -695,6 +719,11 @@
     <h1>Bushbalm Holiday Shenanigans</h1>
     <div class="subtitle">December 9th &amp; 10th, 2026 ✷ Ottawa Edition</div>
 
+    <div class="notice">
+      <span>Joining the gift exchange? Sign up on Elfster.</span>
+      <a class="cta" href="https://www.elfster.com/gift-exchanges/104bc5e2-fe3f-47f0-9aa8-7f6eb9e79315/?join=mta0" target="_blank" rel="noopener">Join on Elfster</a>
+    </div>
+
     <div class="tabs" role="tablist" aria-label="Holiday party info">
       <button class="tab" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="true">Schedule</button>
       <button class="tab" role="tab" id="tab-travel" aria-controls="panel-travel" aria-selected="false" tabindex="-1">Travel &amp; Stay</button>
@@ -739,11 +768,10 @@ The Itinerary
             <li><b>9:00 a.m. &ndash; 12:00 p.m.</b> <span>AGM: Year in Review (yawn, but important)</span></li>
             <li><b>12:00 &ndash; 1:00 p.m.</b> <span>Lunch</span></li>
             <li><b>1:00 &ndash; 3:00 p.m.</b> <span>Holiday festivities, including the gift exchange</span></li>
-            <li><b>3:00 p.m.</b> <span>& We’re off! Everyone heads to the Hard Rock.</span></li>
+            <li><b>3:00 p.m.</b> <span>&amp; we’re off! Everyone heads to the Hard Rock.</span></li>
           </ul>
 
           <div class="event-tags">
-            <span class="tag">⏰ Time: 8am &ndash; 3pm</span>
             <span class="tag">📍 Venue: Cineplex Cinemas Lansdowne VIP Theatre</span>
           </div>
         </div>
@@ -752,7 +780,7 @@ The Itinerary
           <span class="event-when">Thu Dec 10 &middot; Evening</span>
           <div class="event-title">The BIG BUSH BASH</div>
           <div class="event-desc">
-            The grand finale, the main event, the reason you packed the good outfit. We’ll head straight to the Hard Rock Hotel & Casino
+            The grand finale, the main event, the reason you packed the good outfit. We’ll head straight to the Hard Rock
             from our daytime festivities, check in, and give everyone time to get glam before the Bash begins.
             <br><br>
             Think less costume party, more Gatsby gala. Dress up. Sparkle. Cause a tasteful scene.
@@ -792,13 +820,13 @@ The Itinerary
         </div>
 
         <div class="event">
-          <span class="event-when">Mon Dec 8 &ndash; Tue Dec 9</span>
+          <span class="event-when">Mon Dec 7 &ndash; Tue Dec 8</span>
           <div class="event-title">Out-of-Town Arrivals + Your Hyatt Stay</div>
           <div class="event-desc">
-            Plan to arrive in Ottawa by <strong>December 9</strong>.
+            Plan to arrive in Ottawa by <strong>December 8</strong>.
             <br><br>
             Have a connection, questionable winter weather luck or simply don’t enjoy sprinting through airports?
-            Arrive December 8 and give yourself some breathing room.
+            Arrive December 7 and give yourself some breathing room.
             <br><br>
             <b>Hyatt Place Ottawa &ndash; West</b> is home base until <strong>THURSDAY MORNING</strong>.<br>
             And we mean morning.
@@ -946,7 +974,7 @@ The Itinerary
               
               <li><strong>The gym.</strong> (Included)</li>
               <li><strong>The Sound of Your Stay.</strong> (Included) Request a Fender guitar (with headphones and an amp) or a Crosley record player with a curated selection of records, delivered straight to your room.</li>
-             <li><strong>Casino access.</strong> Come and go as you wish. It's open 24/7.</li>
+             <li><strong>Casino access.</strong> Come and go as you wish.</li>
               <li><strong>The common areas,</strong> double as a museum of iconic outfits, instruments and artifacts from music legends.</li>
             </ul>
             There are also lounges, a live band, restaurants and more. Anything purchased or spent outside of the Gala is on you,
